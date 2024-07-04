@@ -46,7 +46,7 @@ export const register = async (req, res, next) => {
                 email: newUser.email,
                 picture: newUser.picture,
                 status: newUser.status,
-                access_token,
+                token: access_token,
             }
         });
     } catch (error) {
@@ -78,7 +78,7 @@ export const login = async (req, res, next) => {
             maxAge: 30 * 24 * 60 * 60 * 1000, //30 days
         });
 
-        console.table({ access_token, refresh_token });
+        // console.table({ access_token, refresh_token });
 
         res.json({
             message: 'register successfully.',
@@ -88,7 +88,7 @@ export const login = async (req, res, next) => {
                 email: user.email,
                 picture: user.picture,
                 status: user.status,
-                access_token,
+                token : access_token,
             }
         });
     } catch (error) {
@@ -129,7 +129,7 @@ export const refreshToken = async (req, res, next) => {
                 email: user.email,
                 picture: user.picture,
                 status: user.status,
-                access_token,
+                token : access_token,
             }
         });
     } catch (error) {
